@@ -86,16 +86,16 @@ export default function FindSalonsPage() {
   const [viewMode, setViewMode] = useState<'list' | 'map'>('list');
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#f7f5f3]">
+    <main className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#f7f5f3] dark:from-black dark:to-neutral-950 transition-colors">
       <Navbar />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-semibold text-[#2a2a2a] mb-3">
+          <h1 className="text-3xl sm:text-4xl font-semibold text-[#2a2a2a] dark:text-white mb-3 transition-colors">
             Find & Book Salons
           </h1>
-          <p className="text-base text-[#666]">
+          <p className="text-base text-[#666] dark:text-neutral-400 transition-colors">
             Discover top-rated salons and stylists near you
           </p>
         </div>
@@ -106,8 +106,8 @@ export default function FindSalonsPage() {
             onClick={() => setActiveView('salon')}
             className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-colors ${
               activeView === 'salon'
-                ? 'bg-[#5a4a3a] text-white'
-                : 'bg-white text-[#666] border border-neutral-200 hover:bg-neutral-50'
+                ? 'bg-[#5a4a3a] dark:bg-[#6d5a42] text-white'
+                : 'bg-white dark:bg-neutral-900 text-[#666] dark:text-neutral-200 border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800'
             }`}
           >
             Salon Based
@@ -116,8 +116,8 @@ export default function FindSalonsPage() {
             onClick={() => setActiveView('stylist')}
             className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-colors ${
               activeView === 'stylist'
-                ? 'bg-[#5a4a3a] text-white'
-                : 'bg-white text-[#666] border border-neutral-200 hover:bg-neutral-50'
+                ? 'bg-[#5a4a3a] dark:bg-[#6d5a42] text-white'
+                : 'bg-white dark:bg-neutral-900 text-[#666] dark:text-neutral-200 border border-neutral-200 dark:border-neutral-700 hover:bg-neutral-50 dark:hover:bg-neutral-800'
             }`}
           >
             Stylist Based
@@ -125,10 +125,10 @@ export default function FindSalonsPage() {
         </div>
 
         {/* Filter Bar */}
-        <div className="bg-white rounded-xl shadow-sm p-4 mb-8">
+        <div className="bg-white dark:bg-neutral-900 rounded-xl shadow-sm dark:shadow-xl p-4 mb-8 transition-colors">
           <div className="flex flex-wrap items-center gap-3">
             {/* Search */}
-            <button className="flex items-center gap-2 px-4 py-2 bg-neutral-50 rounded-lg text-sm text-[#666] hover:bg-neutral-100 transition-colors">
+            <button className="flex items-center gap-2 px-4 py-2 bg-neutral-50 dark:bg-neutral-700 rounded-lg text-sm text-[#666] dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-600 transition-colors">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
@@ -136,7 +136,7 @@ export default function FindSalonsPage() {
             </button>
 
             {/* Location */}
-            <button className="flex items-center gap-2 px-4 py-2 bg-neutral-50 rounded-lg text-sm text-[#666] hover:bg-neutral-100 transition-colors">
+            <button className="flex items-center gap-2 px-4 py-2 bg-neutral-50 dark:bg-neutral-700 rounded-lg text-sm text-[#666] dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-600 transition-colors">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -145,7 +145,7 @@ export default function FindSalonsPage() {
             </button>
 
             {/* Price */}
-            <button className="flex items-center gap-2 px-4 py-2 bg-neutral-50 rounded-lg text-sm text-[#666] hover:bg-neutral-100 transition-colors">
+            <button className="flex items-center gap-2 px-4 py-2 bg-neutral-50 dark:bg-neutral-700 rounded-lg text-sm text-[#666] dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-600 transition-colors">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -153,7 +153,7 @@ export default function FindSalonsPage() {
             </button>
 
             {/* More */}
-            <button className="flex items-center gap-2 px-4 py-2 bg-neutral-50 rounded-lg text-sm text-[#666] hover:bg-neutral-100 transition-colors">
+            <button className="flex items-center gap-2 px-4 py-2 bg-neutral-50 dark:bg-neutral-700 rounded-lg text-sm text-[#666] dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-600 transition-colors">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
               </svg>
@@ -167,8 +167,8 @@ export default function FindSalonsPage() {
                 onClick={() => setViewMode('list')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-colors ${
                   viewMode === 'list'
-                    ? 'bg-[#5a4a3a] text-white'
-                    : 'bg-neutral-50 text-[#666] hover:bg-neutral-100'
+                    ? 'bg-[#5a4a3a] dark:bg-[#6d5a42] text-white'
+                    : 'bg-neutral-50 dark:bg-neutral-700 text-[#666] dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-600'
                 }`}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -182,8 +182,8 @@ export default function FindSalonsPage() {
                 onClick={() => setViewMode('map')}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-colors ${
                   viewMode === 'map'
-                    ? 'bg-[#5a4a3a] text-white'
-                    : 'bg-neutral-50 text-[#666] hover:bg-neutral-100'
+                    ? 'bg-[#5a4a3a] dark:bg-[#6d5a42] text-white'
+                    : 'bg-neutral-50 dark:bg-neutral-700 text-[#666] dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-600'
                 }`}
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -197,8 +197,14 @@ export default function FindSalonsPage() {
 
         {/* Register Salon Prompt */}
         <div className="text-center mb-8">
-          <Link href="/register-salon" className="text-sm text-[#8B7355] hover:text-[#6d5a42] font-medium transition-colors">
-            Register Your Salon Here →
+          <Link
+            href="/register-salon"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#5a4a3a] dark:bg-[#6d5a42] hover:bg-[#4a3a2a] dark:hover:bg-[#5a4a32] text-white text-sm font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 group"
+          >
+            <span>Register Your Salon Here</span>
+            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </Link>
         </div>
 
@@ -258,9 +264,9 @@ export default function FindSalonsPage() {
         {viewMode === 'list' && activeView === 'salon' && (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
             {salons.map((salon) => (
-            <div key={salon.id} className="bg-white rounded-2xl shadow-md overflow-hidden">
+            <div key={salon.id} className="bg-white dark:bg-neutral-900 rounded-2xl shadow-md dark:shadow-xl overflow-hidden transition-colors">
               {/* Salon Image */}
-              <div className="relative w-full h-48 bg-neutral-200">
+              <div className="relative w-full h-48 bg-neutral-200 dark:bg-neutral-700">
                 <Image
                   src={salon.image}
                   alt={salon.name}
@@ -273,7 +279,7 @@ export default function FindSalonsPage() {
               {/* Salon Details */}
               <div className="p-5">
                 {/* Name */}
-                <h3 className="text-lg font-semibold text-[#2a2a2a] mb-3">
+                <h3 className="text-lg font-semibold text-[#2a2a2a] dark:text-white mb-3">
                   {salon.name}
                 </h3>
 
@@ -284,12 +290,12 @@ export default function FindSalonsPage() {
                     <svg className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
-                    <span className="text-sm font-medium text-[#2a2a2a]">{salon.rating}</span>
-                    <span className="text-xs text-[#999]">({salon.reviews})</span>
+                    <span className="text-sm font-medium text-[#2a2a2a] dark:text-white">{salon.rating}</span>
+                    <span className="text-xs text-[#999] dark:text-neutral-500">({salon.reviews})</span>
                   </div>
 
                   {/* Distance */}
-                  <div className="flex items-center gap-1.5 text-[#666]">
+                  <div className="flex items-center gap-1.5 text-[#666] dark:text-neutral-400">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -303,7 +309,7 @@ export default function FindSalonsPage() {
                   {salon.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-neutral-100 text-[#666] text-xs rounded-full"
+                      className="px-3 py-1 bg-neutral-100 dark:bg-neutral-700 text-[#666] dark:text-neutral-300 text-xs rounded-full"
                     >
                       {tag}
                     </span>
@@ -311,7 +317,7 @@ export default function FindSalonsPage() {
                 </div>
 
                 {/* Book Now Button */}
-                <button className="w-full py-3 bg-[#5a4a3a] text-white text-sm font-medium rounded-lg hover:bg-[#4a3a2a] transition-colors">
+                <button className="w-full py-3 bg-[#5a4a3a] dark:bg-[#6d5a42] hover:bg-[#4a3a2a] dark:hover:bg-[#5a4a32] text-white text-sm font-medium rounded-lg transition-colors">
                   Book Now
                 </button>
               </div>
@@ -324,10 +330,10 @@ export default function FindSalonsPage() {
         {viewMode === 'list' && activeView === 'stylist' && (
           <div className="grid gap-6 sm:grid-cols-2 max-w-6xl mx-auto">
             {stylists.map((stylist) => (
-              <div key={stylist.id} className="bg-white rounded-2xl shadow-md overflow-hidden">
+              <div key={stylist.id} className="bg-white dark:bg-neutral-900 rounded-2xl shadow-md dark:shadow-xl overflow-hidden transition-colors">
                 <div className="p-5 flex gap-4">
                   {/* Stylist Profile Image */}
-                  <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-neutral-200">
+                  <div className="relative w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-neutral-200 dark:bg-neutral-700">
                     <Image
                       src={stylist.image}
                       alt={stylist.name}
@@ -340,31 +346,31 @@ export default function FindSalonsPage() {
                   {/* Stylist Details */}
                   <div className="flex-1">
                     {/* Name */}
-                    <h3 className="text-base font-semibold text-[#2a2a2a] mb-1">
+                    <h3 className="text-base font-semibold text-[#2a2a2a] dark:text-white mb-1">
                       {stylist.name}
                     </h3>
 
                     {/* Salon */}
-                    <p className="text-xs text-[#666] mb-2">{stylist.salon}</p>
+                    <p className="text-xs text-[#666] dark:text-neutral-400 mb-2">{stylist.salon}</p>
 
                     {/* Rating */}
                     <div className="flex items-center gap-1.5 mb-3">
                       <svg className="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
-                      <span className="text-sm font-medium text-[#2a2a2a]">{stylist.rating}</span>
-                      <span className="text-xs text-[#999]">({stylist.reviews})</span>
+                      <span className="text-sm font-medium text-[#2a2a2a] dark:text-white">{stylist.rating}</span>
+                      <span className="text-xs text-[#999] dark:text-neutral-500">({stylist.reviews})</span>
                     </div>
 
                     {/* Experience */}
-                    <p className="text-xs text-[#666] mb-3">{stylist.experience}</p>
+                    <p className="text-xs text-[#666] dark:text-neutral-400 mb-3">{stylist.experience}</p>
 
                     {/* Specialties */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {stylist.specialties.map((specialty, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-[#e8f4f4] text-[#14b8a6] text-xs rounded-full font-medium"
+                          className="px-3 py-1 bg-[#e8f4f4] dark:bg-teal-900/30 text-[#14b8a6] dark:text-teal-400 text-xs rounded-full font-medium"
                         >
                           {specialty}
                         </span>
@@ -372,7 +378,7 @@ export default function FindSalonsPage() {
                     </div>
 
                     {/* View Availability Button */}
-                    <button className="w-full py-2.5 bg-[#5a4a3a] text-white text-sm font-medium rounded-lg hover:bg-[#4a3a2a] transition-colors">
+                    <button className="w-full py-2.5 bg-[#5a4a3a] dark:bg-[#6d5a42] hover:bg-[#4a3a2a] dark:hover:bg-[#5a4a32] text-white text-sm font-medium rounded-lg transition-colors">
                       View Availability
                     </button>
                   </div>

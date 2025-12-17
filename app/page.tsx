@@ -21,12 +21,12 @@ export default function Page() {
   // Show loading screen
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#f8f8f8]">
+      <div className="min-h-screen flex items-center justify-center bg-[#f8f8f8] dark:bg-black transition-colors">
         <div className="text-center">
           {/* Logo with soft glow effect */}
           <div className="relative w-28 h-28 mx-auto mb-5">
             {/* Soft circular glow/shadow effect */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-200/50 via-blue-200/40 to-purple-200/50 blur-2xl scale-150 opacity-60"></div>
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-cyan-200/50 via-blue-200/40 to-purple-200/50 dark:from-cyan-600/20 dark:via-blue-600/15 dark:to-purple-600/20 blur-2xl scale-150 opacity-60"></div>
             {/* Logo */}
             <div className="relative w-full h-full">
               <Image
@@ -39,7 +39,7 @@ export default function Page() {
             </div>
           </div>
           {/* Brand name */}
-          <h2 className="text-[28px] font-playfair text-[#4a4a4a] tracking-wide font-normal" style={{ fontFamily: 'var(--font-playfair), Georgia, serif' }}>
+          <h2 className="text-[28px] font-playfair text-[#4a4a4a] dark:text-neutral-100 tracking-wide font-normal transition-colors" style={{ fontFamily: 'var(--font-playfair), Georgia, serif' }}>
             Tressora
           </h2>
         </div>
@@ -48,7 +48,7 @@ export default function Page() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#f7f5f3]">
+    <main className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#f7f5f3] dark:from-black dark:to-neutral-950 transition-colors">
       <Navbar />
       <HomeSection />
       <Footer />
