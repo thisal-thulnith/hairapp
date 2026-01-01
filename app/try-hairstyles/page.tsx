@@ -8,7 +8,6 @@ import Footer from '@/components/Footer';
 export default function TryHairstyles() {
   const [selectedGender, setSelectedGender] = useState<'female' | 'male' | null>(null);
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
-  const [currentStep, setCurrentStep] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState<string>('Long');
   const [selectedHairstyle, setSelectedHairstyle] = useState<string | null>(null);
   const [coloringTechnique, setColoringTechnique] = useState<string>('Solid Color');
@@ -44,13 +43,6 @@ export default function TryHairstyles() {
     ],
   };
 
-  const handleNextStep = () => {
-    if (currentStep === 1 && selectedGender) {
-      setCurrentStep(2);
-    } else if (currentStep === 2 && selectedHairstyle) {
-      setCurrentStep(3);
-    }
-  };
 
   const handleColorWheelClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const element = e.currentTarget;
@@ -125,35 +117,6 @@ export default function TryHairstyles() {
             </p>
           </div>
 
-          {/* Progress Steps */}
-          <div className="flex items-center justify-between mb-8 max-w-[280px]">
-            <div className="flex flex-col items-center">
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center text-[14px] font-medium mb-1 ${
-                currentStep >= 1 ? 'bg-[#8B7355] text-white' : 'bg-gray-200 text-[#666]'
-              }`}>
-                1
-              </div>
-              <span className="text-[11px] text-[#666]">Upload</span>
-            </div>
-            <div className={`flex-1 h-[2px] mx-2 mt-[-20px] ${currentStep >= 2 ? 'bg-[#8B7355]' : 'bg-gray-200'}`}></div>
-            <div className="flex flex-col items-center">
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center text-[14px] font-medium mb-1 ${
-                currentStep >= 2 ? 'bg-[#8B7355] text-white' : 'bg-gray-200 text-[#666]'
-              }`}>
-                2
-              </div>
-              <span className="text-[11px] text-[#666]">Style</span>
-            </div>
-            <div className={`flex-1 h-[2px] mx-2 mt-[-20px] ${currentStep >= 3 ? 'bg-[#8B7355]' : 'bg-gray-200'}`}></div>
-            <div className="flex flex-col items-center">
-              <div className={`w-10 h-10 rounded-full flex items-center justify-center text-[14px] font-medium mb-1 ${
-                currentStep >= 3 ? 'bg-[#8B7355] text-white' : 'bg-gray-200 text-[#666]'
-              }`}>
-                3
-              </div>
-              <span className="text-[11px] text-[#666]">Result</span>
-            </div>
-          </div>
 
           {/* Live Preview Card */}
           <div className="bg-white rounded-2xl shadow-md p-6 mb-6">
@@ -189,12 +152,13 @@ export default function TryHairstyles() {
             </div>
           </div>
 
-          {/* Step 1: Choose Gender */}
-          {currentStep === 1 && (
+          {/* All Steps Combined */}
+          <div className="space-y-6">
+            {/* Choose Gender */}
             <div className="bg-white rounded-2xl shadow-md p-6">
-              <h2 className="text-[18px] font-semibold text-[#2a2a2a] mb-4">Step 1: Choose Gender</h2>
+              <h2 className="text-[18px] font-semibold text-[#2a2a2a] mb-4">Choose Gender</h2>
 
-              <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-2 gap-4">
                 {/* Female Option */}
                 <button
                   onClick={() => setSelectedGender('female')}
@@ -229,26 +193,11 @@ export default function TryHairstyles() {
                   </div>
                 </button>
               </div>
-
-              {/* Next Button */}
-              <button
-                onClick={handleNextStep}
-                disabled={!selectedGender}
-                className={`w-full px-6 py-3 text-white text-[14px] font-medium rounded-lg transition-all ${
-                  selectedGender
-                    ? 'bg-gradient-to-r from-[#8B7355] to-[#6B5644] hover:from-[#7a6349] hover:to-[#5a4838]'
-                    : 'bg-gray-300 cursor-not-allowed'
-                }`}
-              >
-                Next: Choose Hairstyle <span className="ml-1">›</span>
-              </button>
             </div>
-          )}
 
-          {/* Step 2: Select Hairstyle */}
-          {currentStep === 2 && (
+            {/* Select Hairstyle */}
             <div className="bg-white rounded-2xl shadow-md p-6">
-              <h2 className="text-[18px] font-semibold text-[#2a2a2a] mb-4">Step 2: Select Hairstyle</h2>
+              <h2 className="text-[18px] font-semibold text-[#2a2a2a] mb-4">Select Hairstyle</h2>
 
               {/* Category Tabs */}
               <div className="flex flex-wrap gap-2 mb-6">
@@ -293,34 +242,11 @@ export default function TryHairstyles() {
                   </button>
                 ))}
               </div>
-
-              {/* Back and Next Buttons */}
-              <div className="flex gap-3 mt-6">
-                <button
-                  onClick={() => setCurrentStep(1)}
-                  className="flex-1 px-6 py-3 bg-white border-2 border-gray-200 text-[#2a2a2a] text-[14px] font-medium rounded-lg hover:border-gray-300 transition-colors"
-                >
-                  ‹ Back
-                </button>
-                <button
-                  onClick={handleNextStep}
-                  disabled={!selectedHairstyle}
-                  className={`flex-1 px-6 py-3 text-white text-[14px] font-medium rounded-lg transition-all ${
-                    selectedHairstyle
-                      ? 'bg-gradient-to-r from-[#8B7355] to-[#6B5644] hover:from-[#7a6349] hover:to-[#5a4838]'
-                      : 'bg-gray-300 cursor-not-allowed'
-                  }`}
-                >
-                  Next: Pick Color ›
-                </button>
-              </div>
             </div>
-          )}
 
-          {/* Step 3: Pick Color */}
-          {currentStep === 3 && (
+            {/* Pick Color */}
             <div className="bg-white rounded-2xl shadow-md p-6">
-              <h2 className="text-[18px] font-semibold text-[#2a2a2a] mb-4">Step 3: Pick Color</h2>
+              <h2 className="text-[18px] font-semibold text-[#2a2a2a] mb-4">Pick Color</h2>
 
               {/* Coloring Technique */}
               <div className="mb-6">
@@ -467,22 +393,14 @@ export default function TryHairstyles() {
                 </div>
               </div>
 
-              {/* Back and Apply Buttons */}
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setCurrentStep(2)}
-                  className="flex-1 px-6 py-3 bg-white border-2 border-gray-200 text-[#2a2a2a] text-[14px] font-medium rounded-lg hover:border-gray-300 transition-colors"
-                >
-                  ‹ Back
-                </button>
-                <button
-                  className="flex-1 px-6 py-3 bg-gradient-to-r from-[#8B7355] to-[#6B5644] hover:from-[#7a6349] hover:to-[#5a4838] text-white text-[14px] font-medium rounded-lg transition-colors"
-                >
-                  Apply Transformation
-                </button>
-              </div>
+              {/* Apply Button */}
+              <button
+                className="w-full px-6 py-3 bg-gradient-to-r from-[#8B7355] to-[#6B5644] hover:from-[#7a6349] hover:to-[#5a4838] text-white text-[14px] font-medium rounded-lg transition-colors"
+              >
+                Apply Transformation
+              </button>
             </div>
-          )}
+          </div>
         </div>
       </div>
 
@@ -511,29 +429,6 @@ export default function TryHairstyles() {
           </p>
         </div>
 
-        {/* Progress Steps */}
-        <div className="flex items-center justify-start mb-12 max-w-[500px]">
-          <div className="flex flex-col items-center">
-            <div className="w-12 h-12 rounded-full bg-[#B8957A] text-white flex items-center justify-center text-[16px] font-medium mb-2">
-              1
-            </div>
-            <span className="text-[13px] text-[#666] font-medium">Upload</span>
-          </div>
-          <div className="flex-1 h-[2px] bg-gray-200 mx-4 mt-[-30px]"></div>
-          <div className="flex flex-col items-center">
-            <div className="w-12 h-12 rounded-full bg-gray-200 text-[#666] flex items-center justify-center text-[16px] font-medium mb-2">
-              2
-            </div>
-            <span className="text-[13px] text-[#666] font-medium">Style</span>
-          </div>
-          <div className="flex-1 h-[2px] bg-gray-200 mx-4 mt-[-30px]"></div>
-          <div className="flex flex-col items-center">
-            <div className="w-12 h-12 rounded-full bg-gray-200 text-[#666] flex items-center justify-center text-[16px] font-medium mb-2">
-              3
-            </div>
-            <span className="text-[13px] text-[#666] font-medium">Result</span>
-          </div>
-        </div>
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-2 gap-8">
@@ -571,14 +466,14 @@ export default function TryHairstyles() {
             </div>
           </div>
 
-          {/* Right Side - Step Content */}
-          <div className="bg-white rounded-2xl shadow-md p-8">
-            {/* Step 1: Gender Selection */}
-            {currentStep === 1 && (
-              <>
-                <h2 className="text-[24px] font-semibold text-[#2a2a2a] mb-6">Step 1: Choose Gender</h2>
+          {/* Right Side - All Sections Scrollable */}
+          <div className="bg-white rounded-2xl shadow-md p-8 max-h-[800px] overflow-y-auto">
+            <div className="space-y-8">
+              {/* Gender Selection */}
+              <div>
+                <h2 className="text-[24px] font-semibold text-[#2a2a2a] mb-6">Choose Gender</h2>
 
-                <div className="grid grid-cols-2 gap-6 mb-6">
+                <div className="grid grid-cols-2 gap-6">
                   {/* Female Option */}
                   <button
                     onClick={() => setSelectedGender('female')}
@@ -613,26 +508,11 @@ export default function TryHairstyles() {
                     </div>
                   </button>
                 </div>
+              </div>
 
-                {/* Next Button */}
-                <button
-                  onClick={handleNextStep}
-                  disabled={!selectedGender}
-                  className={`w-full px-6 py-4 text-white text-[15px] font-medium rounded-xl transition-all mb-6 ${
-                    selectedGender
-                      ? 'bg-gradient-to-r from-[#B8957A] to-[#9d7e62] hover:from-[#a3846b] hover:to-[#8c6d51] shadow-md'
-                      : 'bg-gray-300 cursor-not-allowed'
-                  }`}
-                >
-                  Next: Choose Hairstyle <span className="ml-1">›</span>
-                </button>
-              </>
-            )}
-
-            {/* Step 2: Hairstyle Selection */}
-            {currentStep === 2 && (
-              <>
-                <h2 className="text-[24px] font-semibold text-[#2a2a2a] mb-6">Step 2: Select Hairstyle</h2>
+              {/* Hairstyle Selection */}
+              <div>
+                <h2 className="text-[24px] font-semibold text-[#2a2a2a] mb-6">Select Hairstyle</h2>
 
                 {/* Category Tabs */}
                 <div className="flex flex-wrap gap-3 mb-6">
@@ -652,7 +532,7 @@ export default function TryHairstyles() {
                 </div>
 
                 {/* Hairstyle Grid */}
-                <div className="grid grid-cols-2 gap-4 mb-6 max-h-[400px] overflow-y-auto">
+                <div className="grid grid-cols-2 gap-4">
                   {hairstyles[selectedCategory as keyof typeof hairstyles]?.map((style) => (
                     <button
                       key={style.id}
@@ -677,34 +557,11 @@ export default function TryHairstyles() {
                     </button>
                   ))}
                 </div>
+              </div>
 
-                {/* Back and Next Buttons */}
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => setCurrentStep(1)}
-                    className="flex-1 px-6 py-4 bg-white border-2 border-gray-200 text-[#2a2a2a] text-[15px] font-medium rounded-xl hover:border-gray-300 transition-colors"
-                  >
-                    ‹ Back
-                  </button>
-                  <button
-                    onClick={handleNextStep}
-                    disabled={!selectedHairstyle}
-                    className={`flex-1 px-6 py-4 text-white text-[15px] font-medium rounded-xl transition-all ${
-                      selectedHairstyle
-                        ? 'bg-gradient-to-r from-[#B8957A] to-[#9d7e62] hover:from-[#a3846b] hover:to-[#8c6d51] shadow-md'
-                        : 'bg-gray-300 cursor-not-allowed'
-                    }`}
-                  >
-                    Next: Pick Color ›
-                  </button>
-                </div>
-              </>
-            )}
-
-            {/* Step 3: Pick Color */}
-            {currentStep === 3 && (
-              <>
-                <h2 className="text-[24px] font-semibold text-[#2a2a2a] mb-6">Step 3: Pick Color</h2>
+              {/* Color Selection */}
+              <div>
+                <h2 className="text-[24px] font-semibold text-[#2a2a2a] mb-6">Pick Color</h2>
 
                 {/* Coloring Technique */}
                 <div className="mb-6">
@@ -833,46 +690,38 @@ export default function TryHairstyles() {
                   </div>
                 </div>
 
-                {/* Back and Apply Buttons */}
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => setCurrentStep(2)}
-                    className="flex-1 px-6 py-4 bg-white border-2 border-gray-200 text-[#2a2a2a] text-[15px] font-medium rounded-xl hover:border-gray-300 transition-colors"
-                  >
-                    ‹ Back
-                  </button>
-                  <button
-                    className="flex-1 px-6 py-4 bg-gradient-to-r from-[#B8957A] to-[#9d7e62] hover:from-[#a3846b] hover:to-[#8c6d51] text-white text-[15px] font-medium rounded-xl transition-colors shadow-md"
-                  >
-                    Apply Transformation
-                  </button>
-                </div>
-              </>
-            )}
+                {/* Apply Button */}
+                <button
+                  className="w-full px-6 py-4 bg-gradient-to-r from-[#B8957A] to-[#9d7e62] hover:from-[#a3846b] hover:to-[#8c6d51] text-white text-[15px] font-medium rounded-xl transition-colors shadow-md"
+                >
+                  Apply Transformation
+                </button>
+              </div>
 
-            {/* Additional Info */}
-            <div className="p-6 bg-gray-50 rounded-xl">
-              <h3 className="text-[16px] font-semibold text-[#2a2a2a] mb-2">Next Steps</h3>
-              <ul className="space-y-2 text-[14px] text-[#666]">
-                <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-[#B8957A] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>Choose from 200K+ hairstyle options</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-[#B8957A] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>See instant AI-powered previews</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-[#B8957A] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>Download or share your results</span>
-                </li>
-              </ul>
+              {/* Additional Info */}
+              <div className="p-6 bg-gray-50 rounded-xl">
+                <h3 className="text-[16px] font-semibold text-[#2a2a2a] mb-2">Next Steps</h3>
+                <ul className="space-y-2 text-[14px] text-[#666]">
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-[#B8957A] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>Choose from 200K+ hairstyle options</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-[#B8957A] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>See instant AI-powered previews</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <svg className="w-5 h-5 text-[#B8957A] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                    </svg>
+                    <span>Download or share your results</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
