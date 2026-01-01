@@ -651,9 +651,6 @@ export default function TryHairstyles() {
                         value={colorIntensity}
                         onChange={(e) => setColorIntensity(Number(e.target.value))}
                         className="w-full h-2 bg-gray-200 dark:bg-neutral-700 rounded-lg appearance-none cursor-pointer transition-colors"
-                        style={{
-                          background: `linear-gradient(to right, #B8957A 0%, #B8957A ${colorIntensity}%, ${document.documentElement.classList.contains('dark') ? '#404040' : '#e5e7eb'} ${colorIntensity}%, ${document.documentElement.classList.contains('dark') ? '#404040' : '#e5e7eb'} 100%)`
-                        }}
                       />
                     </div>
                   </div>
