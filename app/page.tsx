@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Navbar from '@/components/Navbar';
 import HomeSection from '@/components/Home';
 import Footer from '@/components/Footer';
 
@@ -18,10 +17,10 @@ export default function Page() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Show loading screen
+  // Show loading screen overlay (covers navbar)
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#f8f8f8] dark:bg-black transition-colors">
+      <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#f8f8f8] dark:bg-black transition-colors">
         <div className="text-center">
           {/* Logo with soft glow effect */}
           <div className="relative w-28 h-28 mx-auto mb-5">
@@ -49,7 +48,6 @@ export default function Page() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#f7f5f3] dark:from-black dark:to-neutral-950 transition-colors">
-      <Navbar />
       <HomeSection />
       <Footer />
     </main>

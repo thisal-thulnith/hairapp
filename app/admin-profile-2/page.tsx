@@ -3,14 +3,14 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from '@/components/Navbar';
 
 export default function AdminProfile2() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#f7f5f3] dark:from-black dark:to-neutral-950">
-      <Navbar />
+      {/* Spacing for fixed navbar */}
+      <div className="h-[56px] md:h-[70px]"></div>
 
-      <div className="max-w-md mx-auto px-4 pt-24 pb-8">
+      <div className="max-w-md mx-auto px-4 pt-12 pb-8">
         {/* Header with Back Button */}
         <div className="flex items-center justify-between mb-6">
           <button className="w-10 h-10 flex items-center justify-center">

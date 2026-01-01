@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 interface SalonData {
@@ -91,7 +90,8 @@ export default function RegisterSalonPage() {
   if (isSubmitted) {
     return (
       <main className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#f7f5f3] dark:from-black dark:to-neutral-950 transition-colors">
-        <Navbar />
+        {/* Spacing for fixed navbar */}
+        <div className="h-[56px] md:h-[70px]"></div>
 
         <div className="max-w-2xl mx-auto px-4 py-12 sm:py-20">
           <div className="bg-white dark:bg-neutral-900 rounded-3xl shadow-xl p-8 sm:p-12 text-center transition-colors">
@@ -125,7 +125,8 @@ export default function RegisterSalonPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#f7f5f3] dark:from-neutral-950 dark:to-neutral-900 transition-colors">
-      <Navbar />
+      {/* Spacing for fixed navbar */}
+      <div className="h-[56px] md:h-[70px]"></div>
 
       <div className="max-w-2xl mx-auto px-4 py-8 sm:py-12">
         <div className="bg-white dark:bg-neutral-800 rounded-3xl shadow-xl p-6 sm:p-10 transition-colors">

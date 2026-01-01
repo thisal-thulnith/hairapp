@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 // Sample salon data
@@ -87,7 +86,8 @@ export default function FindSalonsPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#f7f5f3] dark:from-black dark:to-neutral-950 transition-colors">
-      <Navbar />
+      {/* Spacing for fixed navbar */}
+      <div className="h-[56px] md:h-[70px]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Header */}

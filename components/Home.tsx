@@ -217,10 +217,10 @@ export default function Home() {
       <section className="hidden lg:block bg-white dark:bg-black overflow-hidden transition-colors">
         {/* Hero Section */}
         <div className="relative pb-[500px]">
-          <div className="max-w-[1400px] mx-auto px-8 pt-20 pb-12">
+          <div className="max-w-[1400px] mx-auto px-8 pt-40 pb-12">
             <div className="grid grid-cols-2 gap-16 items-center">
               {/* Left Content */}
-              <div className="space-y-8 z-10 relative">
+              <div className="space-y-8 z-10 relative animate-fade-in-left">
                 <h1 className="text-[64px] font-normal leading-[1.1] text-[#A68968] dark:text-[#D4B896]">
                   Transform Your Hair with AI Magic
                 </h1>
@@ -228,10 +228,10 @@ export default function Home() {
                   Discover perfect hairstyles, book top salons, and get personalized hair care recommendations all powered by advanced AI.
                 </p>
                 <div className="flex gap-5 pt-2">
-                  <button className="px-9 py-4 bg-[#C5A885] hover:bg-[#b89775] dark:bg-[#b89775] dark:hover:bg-[#A68968] text-white text-[15px] font-medium rounded-xl transition-colors shadow-sm">
+                  <button className="px-9 py-4 bg-[#C5A885] hover:bg-[#b89775] dark:bg-[#b89775] dark:hover:bg-[#A68968] text-white text-[15px] font-medium rounded-xl transition-all duration-300 shadow-sm hover:shadow-xl hover:scale-105">
                     Try Virtual Studio
                   </button>
-                  <button className="px-9 py-4 bg-[#2a2a2a] hover:bg-[#1a1a1a] dark:bg-neutral-700 dark:hover:bg-neutral-600 text-white text-[15px] font-medium rounded-xl transition-colors shadow-sm">
+                  <button className="px-9 py-4 bg-[#2a2a2a] hover:bg-[#1a1a1a] dark:bg-neutral-700 dark:hover:bg-neutral-600 text-white text-[15px] font-medium rounded-xl transition-all duration-300 shadow-sm hover:shadow-xl hover:scale-105">
                     View Pricing
                   </button>
                 </div>
@@ -260,7 +260,7 @@ export default function Home() {
             <div className="max-w-[1400px] mx-auto px-8">
               <div className="grid grid-cols-3 gap-6">
             {/* 50K+ Happy Users */}
-            <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-md dark:shadow-xl p-6 hover:shadow-lg transition-all">
+            <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-md dark:shadow-xl p-6 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-fade-in-up animation-delay-100">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-[28px] font-bold text-[#2a2a2a] dark:text-white mb-1 tracking-tight">50K +</h3>
@@ -275,7 +275,7 @@ export default function Home() {
             </div>
 
             {/* 200K+ Hairstyles */}
-            <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-md dark:shadow-xl p-6 hover:shadow-lg transition-all">
+            <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-md dark:shadow-xl p-6 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-fade-in-up animation-delay-300">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-[28px] font-bold text-[#2a2a2a] dark:text-white mb-1 tracking-tight">200K +</h3>
@@ -290,7 +290,7 @@ export default function Home() {
             </div>
 
             {/* 10K+ Partners */}
-            <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-md dark:shadow-xl p-6 hover:shadow-lg transition-all">
+            <div className="bg-white dark:bg-neutral-900 rounded-2xl shadow-md dark:shadow-xl p-6 hover:shadow-lg hover:scale-105 transition-all duration-300 animate-fade-in-up animation-delay-500">
               <div className="flex items-center justify-between">
                 <div>
                   <h3 className="text-[28px] font-bold text-[#2a2a2a] dark:text-white mb-1 tracking-tight">10K +</h3>
@@ -311,41 +311,44 @@ export default function Home() {
         {/* About Us Section */}
         <div className="bg-[#f5f5f5] dark:bg-black py-16 transition-colors">
           <div className="max-w-[1400px] mx-auto px-8">
-            <div className="flex items-start gap-16">
-              {/* Left Side - Text Content */}
-              <div className="w-[400px] flex-shrink-0">
-                <h2 className="text-[32px] font-semibold text-[#2a2a2a] dark:text-white mb-6">About Us</h2>
-                <p className="text-[13px] text-[#666] dark:text-neutral-300 leading-relaxed">
-                  Powerful AI tools to transform your hair journey from start to finish. Experience the future of hair styling with advanced AI technology that understands your unique style preferences.
+            <div className="grid grid-cols-2 gap-16 items-center">
+              {/* Left Side - Text Content (Centered) */}
+              <div className="flex flex-col justify-center animate-fade-in-left">
+                <h2 className="text-[40px] font-semibold text-[#2a2a2a] dark:text-white mb-6 text-center">About Us</h2>
+                <p className="text-[14px] text-[#666] dark:text-neutral-300 leading-relaxed text-center max-w-[500px] mx-auto">
+                  Hair App is your AI-powered companion for effortless hair styling. Try new looks, book trusted salons, and find products for healthy, beautiful hair — all in one place. Our mission is simple: make hair styling accessible, fun, and personalized. We believe everyone deserves to look and feel their best. Hair App also empowers professionals. Register to showcase your services, connect with clients, and grow your business through our smart booking system.
                 </p>
               </div>
 
-              {/* Right Side - Three Circular Images */}
-              <div className="flex gap-6 flex-1 justify-start">
-                <div className="w-[220px] h-[220px] rounded-full overflow-hidden shadow-lg">
+              {/* Right Side - Three Oval Images Staggered */}
+              <div className="flex gap-4 items-center justify-center animate-fade-in-right animation-delay-200">
+                {/* First Image - Bottom Position */}
+                <div className="w-[180px] h-[360px] rounded-full overflow-hidden shadow-lg mt-20">
                   <Image
                     src="/images/Rectangle12.png"
-                    alt="About Image 1"
-                    width={220}
-                    height={220}
+                    alt="Hair Styling 1"
+                    width={180}
+                    height={360}
                     className="object-cover w-full h-full"
                   />
                 </div>
-                <div className="w-[220px] h-[220px] rounded-full overflow-hidden shadow-lg">
+                {/* Second Image - Middle Position */}
+                <div className="w-[180px] h-[360px] rounded-full overflow-hidden shadow-lg -mt-10">
                   <Image
                     src="/images/Rectangle46.png"
-                    alt="About Image 2"
-                    width={220}
-                    height={220}
+                    alt="Salon Interior"
+                    width={180}
+                    height={360}
                     className="object-cover w-full h-full"
                   />
                 </div>
-                <div className="w-[220px] h-[220px] rounded-full overflow-hidden shadow-lg">
+                {/* Third Image - Top Position */}
+                <div className="w-[180px] h-[360px] rounded-full overflow-hidden shadow-lg -mt-32">
                   <Image
                     src="/images/Rectangle47.png"
-                    alt="About Image 3"
-                    width={220}
-                    height={220}
+                    alt="Hair Styling 2"
+                    width={180}
+                    height={360}
                     className="object-cover w-full h-full"
                   />
                 </div>
@@ -367,7 +370,7 @@ export default function Home() {
             {/* Feature Cards Grid */}
             <div className="grid grid-cols-3 gap-8">
               {/* Try Hairstyles Card */}
-              <div className="bg-white dark:bg-neutral-900 rounded-xl p-8 hover:shadow-md dark:hover:shadow-xl transition-all">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl p-8 hover:shadow-lg hover:scale-105 dark:hover:shadow-xl transition-all duration-300 animate-fade-in-up animation-delay-100">
                 <div className="w-14 h-14 mb-6 flex items-center justify-center bg-gray-100 dark:bg-neutral-700 rounded-xl">
                   <svg className="w-7 h-7 text-[#2a2a2a] dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z" />
@@ -383,7 +386,7 @@ export default function Home() {
               </div>
 
               {/* Find Salons Card */}
-              <div className="bg-white dark:bg-neutral-900 rounded-xl p-8 hover:shadow-md dark:hover:shadow-xl transition-all">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl p-8 hover:shadow-lg hover:scale-105 dark:hover:shadow-xl transition-all duration-300 animate-fade-in-up animation-delay-300">
                 <div className="w-14 h-14 mb-6 flex items-center justify-center bg-gray-100 dark:bg-neutral-700 rounded-xl">
                   <svg className="w-7 h-7 text-[#2a2a2a] dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -400,7 +403,7 @@ export default function Home() {
               </div>
 
               {/* Products Card */}
-              <div className="bg-white dark:bg-neutral-900 rounded-xl p-8 hover:shadow-md dark:hover:shadow-xl transition-all">
+              <div className="bg-white dark:bg-neutral-900 rounded-xl p-8 hover:shadow-lg hover:scale-105 dark:hover:shadow-xl transition-all duration-300 animate-fade-in-up animation-delay-500">
                 <div className="w-14 h-14 mb-6 flex items-center justify-center bg-gray-100 dark:bg-neutral-700 rounded-xl">
                   <svg className="w-7 h-7 text-[#2a2a2a] dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -413,6 +416,80 @@ export default function Home() {
                 <a href="#" className="text-[14px] text-[#666] hover:text-[#2a2a2a] dark:text-neutral-400 dark:hover:text-white inline-flex items-center gap-1">
                   Get Started <span>→</span>
                 </a>
+              </div>
+            </div>
+
+            {/* Additional Features - Icons */}
+            <div className="grid grid-cols-3 gap-12 mt-20 max-w-[1000px] mx-auto">
+              {/* AI-Powered */}
+              <div className="text-center animate-scale-in animation-delay-200">
+                <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 rounded-full transition-colors">
+                  <svg className="w-9 h-9 text-[#2a2a2a] dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <h3 className="text-[18px] font-semibold text-[#2a2a2a] dark:text-white mb-2">AI-Powered</h3>
+                <p className="text-[14px] text-[#666] dark:text-neutral-400 leading-relaxed">
+                  Advanced AI for perfect results
+                </p>
+              </div>
+
+              {/* Instant Preview */}
+              <div className="text-center animate-scale-in animation-delay-400">
+                <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 rounded-full transition-colors">
+                  <svg className="w-9 h-9 text-[#2a2a2a] dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-[18px] font-semibold text-[#2a2a2a] dark:text-white mb-2">Instant Preview</h3>
+                <p className="text-[14px] text-[#666] dark:text-neutral-400 leading-relaxed">
+                  See changes in real-time
+                </p>
+              </div>
+
+              {/* Secure & Private */}
+              <div className="text-center animate-scale-in animation-delay-600">
+                <div className="w-20 h-20 mx-auto mb-6 flex items-center justify-center bg-neutral-100 dark:bg-neutral-800 rounded-full transition-colors">
+                  <svg className="w-9 h-9 text-[#2a2a2a] dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 className="text-[18px] font-semibold text-[#2a2a2a] dark:text-white mb-2">Secure & Private</h3>
+                <p className="text-[14px] text-[#666] dark:text-neutral-400 leading-relaxed">
+                  Your data is always protected
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Final CTA Section */}
+        <div className="bg-gradient-to-br from-neutral-200 via-neutral-100 to-neutral-50 dark:from-neutral-900 dark:via-neutral-800 dark:to-neutral-900 py-24 transition-colors">
+          <div className="max-w-[1400px] mx-auto px-8">
+            <div className="flex items-center justify-between gap-12 animate-fade-in">
+              {/* Left Side - Text */}
+              <div className="flex-shrink-0">
+                <h2 className="text-[40px] font-semibold text-[#2a2a2a] dark:text-white mb-3 leading-tight">
+                  Ready to Transform Your Look?
+                </h2>
+                <p className="text-[15px] text-[#666] dark:text-neutral-400 leading-relaxed">
+                  Join thousands of happy users and discover<br />your perfect style today
+                </p>
+              </div>
+
+              {/* Right Side - Wide Animated Button */}
+              <div className="flex-1 max-w-[700px]">
+                <button className="group relative w-full px-16 py-5 bg-white dark:bg-neutral-800 text-[#666] dark:text-neutral-300 text-[17px] font-normal rounded-full shadow-sm hover:shadow-md transition-all duration-500 overflow-hidden ring-1 ring-neutral-200 dark:ring-neutral-700 hover:ring-neutral-300 dark:hover:ring-neutral-600">
+                  <span className="relative z-10 flex items-center justify-between w-full">
+                    <span>Start Free Trial</span>
+                    <span className="text-neutral-400 dark:text-neutral-500 transition-all duration-500 group-hover:translate-x-3 group-hover:text-neutral-600 dark:group-hover:text-neutral-300">
+                      {'>'}{'>'}{'>'}{'>'}{'>'}{'>'}{'>'}{'>'}{'>'}{'>'}{'>'}{'>'}{'>'}{'>'}{'>'}{'>'}
+                    </span>
+                  </span>
+                  {/* Subtle hover background effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-neutral-50 to-transparent dark:from-neutral-700 dark:to-transparent opacity-0 group-hover:opacity-50 transition-opacity duration-500"></div>
+                </button>
               </div>
             </div>
           </div>

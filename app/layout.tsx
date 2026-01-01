@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import { AuthProvider } from '@/contexts/AuthContext'
+import Navbar from '@/components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
@@ -26,6 +27,7 @@ export default function RootLayout({
         <ThemeProvider>
           <AuthProvider>
             <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
+              <Navbar />
               {children}
             </div>
           </AuthProvider>

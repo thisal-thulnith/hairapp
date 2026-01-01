@@ -3,14 +3,14 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Navbar from '@/components/Navbar';
 
 export default function AdminProfile1() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#f7f5f3] dark:from-black dark:to-neutral-950">
-      <Navbar />
+      {/* Spacing for fixed navbar */}
+      <div className="h-[56px] md:h-[70px]"></div>
 
-      <div className="max-w-md mx-auto px-4 pt-24 pb-8">
+      <div className="max-w-md mx-auto px-4 pt-12 pb-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-xl font-semibold text-[#2a2a2a] dark:text-white">Hair App</h1>
