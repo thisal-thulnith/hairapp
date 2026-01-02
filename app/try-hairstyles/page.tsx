@@ -144,10 +144,16 @@ export default function TryHairstyles() {
 
             {/* Upload Buttons */}
             <div className="space-y-3">
-              <button className="w-full px-6 py-3 bg-gradient-to-r from-[#8B7355] to-[#6B5644] hover:from-[#7a6349] hover:to-[#5a4838] text-white text-[14px] font-medium rounded-lg transition-colors">
+              <button
+                onClick={() => alert('Camera feature coming soon!')}
+                className="w-full px-6 py-3 bg-gradient-to-r from-[#8B7355] to-[#6B5644] hover:from-[#7a6349] hover:to-[#5a4838] text-white text-[14px] font-medium rounded-lg transition-colors cursor-pointer"
+              >
                 Take Photo
               </button>
-              <button className="w-full px-6 py-3 bg-white dark:bg-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-700 text-[#2a2a2a] dark:text-white text-[14px] font-medium rounded-lg border border-gray-200 dark:border-neutral-700 transition-colors">
+              <button
+                onClick={() => alert('Gallery upload coming soon!')}
+                className="w-full px-6 py-3 bg-white dark:bg-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-700 text-[#2a2a2a] dark:text-white text-[14px] font-medium rounded-lg border border-gray-200 dark:border-neutral-700 transition-colors cursor-pointer"
+              >
                 Upload from Gallery
               </button>
             </div>
@@ -458,10 +464,16 @@ export default function TryHairstyles() {
 
             {/* Upload Buttons */}
             <div className="space-y-3">
-              <button className="w-full px-6 py-4 bg-gradient-to-r from-[#B8957A] to-[#9d7e62] hover:from-[#a3846b] hover:to-[#8c6d51] text-white text-[15px] font-medium rounded-xl transition-colors shadow-md">
+              <button
+                onClick={() => alert('Camera feature coming soon!')}
+                className="w-full px-6 py-4 bg-gradient-to-r from-[#B8957A] to-[#9d7e62] hover:from-[#a3846b] hover:to-[#8c6d51] text-white text-[15px] font-medium rounded-xl transition-colors shadow-md cursor-pointer"
+              >
                 Take Photo
               </button>
-              <button className="w-full px-6 py-4 bg-white dark:bg-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-700 text-[#2a2a2a] dark:text-white text-[15px] font-medium rounded-xl border border-gray-200 dark:border-neutral-700 transition-colors">
+              <button
+                onClick={() => alert('Gallery upload coming soon!')}
+                className="w-full px-6 py-4 bg-white dark:bg-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-700 text-[#2a2a2a] dark:text-white text-[15px] font-medium rounded-xl border border-gray-200 dark:border-neutral-700 transition-colors cursor-pointer"
+              >
                 Upload from Gallery
               </button>
             </div>
