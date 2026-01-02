@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Footer from '@/components/Footer';
 
 export default function TryHairstyles() {
@@ -94,15 +95,15 @@ export default function TryHairstyles() {
       <div className="lg:hidden">
         {/* Top Navigation Tabs */}
         <div className="flex items-center justify-center gap-2 px-4 pt-6 pb-4">
-          <button className="px-5 py-2 bg-primary-500 dark:bg-primary-600 text-white text-[13px] font-medium rounded-full transition-colors">
+          <Link href="/try-hairstyles" className="px-5 py-2 bg-primary-500 dark:bg-primary-600 text-white text-[13px] font-medium rounded-full transition-colors">
             Try Hairstyles
-          </button>
-          <button className="px-5 py-2 bg-white dark:bg-neutral-800 text-[#666] dark:text-neutral-300 text-[13px] font-medium rounded-full border border-gray-200 dark:border-neutral-700 transition-colors">
+          </Link>
+          <Link href="/find-salons" className="px-5 py-2 bg-white dark:bg-neutral-800 text-[#666] dark:text-neutral-300 text-[13px] font-medium rounded-full border border-gray-200 dark:border-neutral-700 hover:bg-gray-50 dark:hover:bg-neutral-700 transition-colors">
             Find Salons
-          </button>
-          <button className="px-5 py-2 bg-white dark:bg-neutral-800 text-[#666] dark:text-neutral-300 text-[13px] font-medium rounded-full border border-gray-200 dark:border-neutral-700 transition-colors">
+          </Link>
+          <Link href="/products" className="px-5 py-2 bg-white dark:bg-neutral-800 text-[#666] dark:text-neutral-300 text-[13px] font-medium rounded-full border border-gray-200 dark:border-neutral-700 hover:bg-gray-50 dark:hover:bg-neutral-700 transition-colors">
             Products
-          </button>
+          </Link>
         </div>
 
         {/* Main Content */}
@@ -408,15 +409,15 @@ export default function TryHairstyles() {
       <div className="hidden lg:block max-w-[1200px] mx-auto px-8 pt-[100px] pb-16">
         {/* Top Navigation Tabs */}
         <div className="flex items-center gap-3 mb-8">
-          <button className="px-6 py-2.5 bg-[#B8957A] text-white text-[14px] font-medium rounded-lg">
+          <Link href="/try-hairstyles" className="px-6 py-2.5 bg-[#B8957A] text-white text-[14px] font-medium rounded-lg">
             Try Hairstyles
-          </button>
-          <button className="px-6 py-2.5 bg-white dark:bg-neutral-800 text-[#666] dark:text-neutral-300 text-[14px] font-medium rounded-lg border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600 transition-colors">
+          </Link>
+          <Link href="/find-salons" className="px-6 py-2.5 bg-white dark:bg-neutral-800 text-[#666] dark:text-neutral-300 text-[14px] font-medium rounded-lg border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600 hover:bg-gray-50 dark:hover:bg-neutral-700 transition-colors">
             Find Salons
-          </button>
-          <button className="px-6 py-2.5 bg-white dark:bg-neutral-800 text-[#666] dark:text-neutral-300 text-[14px] font-medium rounded-lg border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600 transition-colors">
+          </Link>
+          <Link href="/products" className="px-6 py-2.5 bg-white dark:bg-neutral-800 text-[#666] dark:text-neutral-300 text-[14px] font-medium rounded-lg border border-gray-200 dark:border-neutral-700 hover:border-gray-300 dark:hover:border-neutral-600 hover:bg-gray-50 dark:hover:bg-neutral-700 transition-colors">
             Products
-          </button>
+          </Link>
         </div>
 
         {/* Header */}

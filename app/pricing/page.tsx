@@ -1,8 +1,21 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
 import Footer from '@/components/Footer';
 
 export default function PricingPage() {
+  const router = useRouter();
+  const { isLoggedIn } = useAuth();
+
+  const handleSubscribe = (plan: string) => {
+    if (!isLoggedIn) {
+      router.push('/login');
+    } else {
+      // Handle subscription logic here
+      alert(`Subscribing to ${plan} plan! Payment integration coming soon.`);
+    }
+  };
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#fdfcfb] to-[#f7f5f3] dark:from-black dark:to-neutral-950 transition-colors">
       {/* Spacing for fixed navbar */}
@@ -15,7 +28,7 @@ export default function PricingPage() {
             Choose Your Plan
           </h1>
           <p className="text-base text-[#666] dark:text-neutral-400 max-w-2xl mx-auto transition-colors">
-            Unlock the full power of Hair App with premium features
+            Unlock the full power of LILY with premium features
           </p>
         </div>
 
@@ -96,7 +109,10 @@ export default function PricingPage() {
             </div>
 
             {/* Button */}
-            <button className="w-full py-3 bg-[#e5e7eb] dark:bg-neutral-700 text-[#2a2a2a] dark:text-white text-sm font-medium rounded-lg hover:bg-[#d1d5db] dark:hover:bg-neutral-600 transition-colors">
+            <button
+              onClick={() => router.push('/try-hairstyles')}
+              className="w-full py-3 bg-[#e5e7eb] dark:bg-neutral-700 text-[#2a2a2a] dark:text-white text-sm font-medium rounded-lg hover:bg-[#d1d5db] dark:hover:bg-neutral-600 transition-colors cursor-pointer"
+            >
               Current Plan
             </button>
           </div>
@@ -176,7 +192,10 @@ export default function PricingPage() {
               </div>
 
               {/* Button */}
-              <button className="w-full py-3 bg-gradient-to-r from-[#14b8a6] to-[#10b981] text-white text-sm font-medium rounded-lg hover:from-[#0d9488] hover:to-[#059669] transition-all shadow-md hover:shadow-lg">
+              <button
+                onClick={() => handleSubscribe('Pro')}
+                className="w-full py-3 bg-gradient-to-r from-[#14b8a6] to-[#10b981] text-white text-sm font-medium rounded-lg hover:from-[#0d9488] hover:to-[#059669] transition-all shadow-md hover:shadow-lg cursor-pointer"
+              >
                 Subscribe Now
               </button>
 
@@ -262,7 +281,10 @@ export default function PricingPage() {
               </div>
 
               {/* Button */}
-              <button className="w-full py-3 bg-gradient-to-r from-[#9333ea] to-[#7e22ce] text-white text-sm font-medium rounded-lg hover:from-[#7e22ce] hover:to-[#6b21a8] transition-all shadow-md hover:shadow-lg">
+              <button
+                onClick={() => handleSubscribe('Elite')}
+                className="w-full py-3 bg-gradient-to-r from-[#9333ea] to-[#7e22ce] text-white text-sm font-medium rounded-lg hover:from-[#7e22ce] hover:to-[#6b21a8] transition-all shadow-md hover:shadow-lg cursor-pointer"
+              >
                 Subscribe Now
               </button>
 

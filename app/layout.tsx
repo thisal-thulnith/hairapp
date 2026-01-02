@@ -9,8 +9,8 @@ const inter = Inter({ subsets: ['latin'] })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
 export const metadata: Metadata = {
-  title: 'Tressora - AI Hair Transformation Studio',
-  description: 'Transform your hairstyle with AI-powered image generation. Upload your photo and try different hair styles instantly with Tressora.',
+  title: 'LILY - AI Hair Transformation Studio',
+  description: 'Transform your hairstyle with AI-powered image generation. Upload your photo and try different hair styles instantly with LILY.',
   icons: {
     icon: '/images/logo.png',
   },

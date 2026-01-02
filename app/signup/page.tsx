@@ -39,13 +39,13 @@ export default function SignupPage() {
             <div className="relative w-8 h-8">
               <Image
                 src="/images/logo.png"
-                alt="Tressora Logo"
+                alt="LILY Logo"
                 fill
                 className="object-contain"
                 priority
               />
             </div>
-            <span className="text-[18px] font-medium text-[#2a2a2a]">Tressora</span>
+            <span className="text-[18px] font-medium text-[#2a2a2a]">LILY</span>
           </Link>
 
           {/* Theme Toggle */}

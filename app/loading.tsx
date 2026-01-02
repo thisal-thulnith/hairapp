@@ -7,14 +7,14 @@ export default function Loading() {
         <div className="relative w-32 h-32 mx-auto mb-8 animate-pulse">
           <Image
             src="/images/logo.png"
-            alt="Tressora Logo"
+            alt="LILY Logo"
             fill
             className="object-contain"
             priority
           />
         </div>
         <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 mb-2">
-          Tressora
+          LILY
         </h2>
         <p className="text-neutral-600 dark:text-neutral-400">
           Preparing your transformation experience...

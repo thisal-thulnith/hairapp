@@ -316,7 +316,7 @@ export default function Home() {
               <div className="flex flex-col justify-center animate-fade-in-left">
                 <h2 className="text-[40px] font-semibold text-[#2a2a2a] dark:text-white mb-6 text-center">About Us</h2>
                 <p className="text-[14px] text-[#666] dark:text-neutral-300 leading-relaxed text-center max-w-[500px] mx-auto">
-                  Hair App is your AI-powered companion for effortless hair styling. Try new looks, book trusted salons, and find products for healthy, beautiful hair — all in one place. Our mission is simple: make hair styling accessible, fun, and personalized. We believe everyone deserves to look and feel their best. Hair App also empowers professionals. Register to showcase your services, connect with clients, and grow your business through our smart booking system.
+                  LILY is your AI-powered companion for effortless hair styling. Try new looks, book trusted salons, and find products for healthy, beautiful hair — all in one place. Our mission is simple: make hair styling accessible, fun, and personalized. We believe everyone deserves to look and feel their best. LILY also empowers professionals. Register to showcase your services, connect with clients, and grow your business through our smart booking system.
                 </p>
               </div>
 

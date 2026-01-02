@@ -11,15 +11,15 @@ export default function Footer() {
             <div className="relative w-8 h-8">
               <Image
                 src="/images/logo.png"
-                alt="Tressora Logo"
+                alt="LILY Logo"
                 fill
                 className="object-contain"
               />
             </div>
-            <span className="text-lg font-playfair text-[#4a4a4a] dark:text-neutral-200">Tressora</span>
+            <span className="text-lg font-playfair text-[#4a4a4a] dark:text-neutral-200">LILY</span>
           </div>
           <div className="text-center text-sm text-neutral-500 dark:text-neutral-400">
-            <p>© 2024 Tressora. AI-Powered Hair Transformation Studio.</p>
+            <p>© 2024 LILY. AI-Powered Hair Transformation Studio.</p>
           </div>
         </div>
       </div>

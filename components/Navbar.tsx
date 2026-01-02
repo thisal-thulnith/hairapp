@@ -63,13 +63,13 @@ export default function Navbar() {
               <div className="relative w-10 h-10 flex-shrink-0">
                 <Image
                   src="/images/logo.png"
-                  alt="Hair App Logo"
+                  alt="LILY Logo"
                   fill
                   className="object-contain"
                   priority
                 />
               </div>
-              <span className="text-[20px] font-medium text-[#2a2a2a] dark:text-white transition-colors">Hair App</span>
+              <span className="text-[20px] font-medium text-[#2a2a2a] dark:text-white transition-colors">LILY</span>
             </Link>
           </div>
 
@@ -161,13 +161,13 @@ export default function Navbar() {
               <div className="relative w-7 h-7 flex-shrink-0">
                 <Image
                   src="/images/logo.png"
-                  alt="Tressora Logo"
+                  alt="LILY Logo"
                   fill
                   className="object-contain"
                   priority
                 />
               </div>
-              <span className="text-[16px] font-medium text-[#2a2a2a] dark:text-white transition-colors">Tressora</span>
+              <span className="text-[16px] font-medium text-[#2a2a2a] dark:text-white transition-colors">LILY</span>
             </Link>
           </div>
 
