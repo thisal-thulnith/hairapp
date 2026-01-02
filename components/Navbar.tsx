@@ -219,8 +219,8 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             ></div>
 
-            {/* Menu Content */}
-            <div className="fixed top-[56px] left-0 right-0 bottom-0 bg-white dark:bg-neutral-900 z-[9999] overflow-y-auto shadow-2xl border-t-2 border-neutral-200 dark:border-neutral-700">
+            {/* Menu Content - Below Navbar */}
+            <div className="fixed top-[56px] left-0 right-0 bottom-0 bg-white dark:bg-neutral-900 z-[9999] overflow-y-auto">
               <div className="px-4 py-6">
                 {/* Navigation Links */}
                 <nav className="space-y-2 mb-6">
