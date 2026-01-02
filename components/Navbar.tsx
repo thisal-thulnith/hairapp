@@ -220,7 +220,7 @@ export default function Navbar() {
             ></div>
 
             {/* Menu Content */}
-            <div className="fixed top-[56px] left-0 right-0 bottom-0 bg-white dark:bg-neutral-900 z-[101] overflow-y-auto animate-in slide-in-from-top duration-200 shadow-2xl">
+            <div className="fixed top-[56px] left-0 right-0 bottom-0 bg-white dark:bg-neutral-900 z-[101] overflow-y-auto shadow-2xl transition-colors">
               <div className="px-4 py-6">
                 {/* Navigation Links */}
                 <nav className="space-y-2 mb-6">
