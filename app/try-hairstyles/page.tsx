@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Footer from '@/components/Footer';
@@ -13,6 +13,10 @@ export default function TryHairstyles() {
   const [coloringTechnique, setColoringTechnique] = useState<string>('Solid Color');
   const [selectedColor, setSelectedColor] = useState<string>('#000000');
   const [colorIntensity, setColorIntensity] = useState<number>(100);
+
+  // Refs for file inputs
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const cameraInputRef = useRef<HTMLInputElement>(null);
 
   const categories = ['Long', 'Medium', 'Short', 'Braids', 'Updo'];
   const techniques = ['Solid Color', 'Highlights', 'Balayage', 'Ombre'];
@@ -43,6 +47,27 @@ export default function TryHairstyles() {
     ],
   };
 
+  // Handler for file upload from gallery
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        setUploadedImage(event.target?.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  // Handler to open gallery
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  // Handler to open camera
+  const handleCameraClick = () => {
+    cameraInputRef.current?.click();
+  };
 
   const handleColorWheelClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const element = e.currentTarget;
@@ -145,13 +170,13 @@ export default function TryHairstyles() {
             {/* Upload Buttons */}
             <div className="space-y-3">
               <button
-                onClick={() => alert('Camera feature coming soon!')}
+                onClick={handleCameraClick}
                 className="w-full px-6 py-3 bg-gradient-to-r from-[#8B7355] to-[#6B5644] hover:from-[#7a6349] hover:to-[#5a4838] text-white text-[14px] font-medium rounded-lg transition-colors cursor-pointer"
               >
                 Take Photo
               </button>
               <button
-                onClick={() => alert('Gallery upload coming soon!')}
+                onClick={handleUploadClick}
                 className="w-full px-6 py-3 bg-white dark:bg-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-700 text-[#2a2a2a] dark:text-white text-[14px] font-medium rounded-lg border border-gray-200 dark:border-neutral-700 transition-colors cursor-pointer"
               >
                 Upload from Gallery
@@ -465,13 +490,13 @@ export default function TryHairstyles() {
             {/* Upload Buttons */}
             <div className="space-y-3">
               <button
-                onClick={() => alert('Camera feature coming soon!')}
+                onClick={handleCameraClick}
                 className="w-full px-6 py-4 bg-gradient-to-r from-[#B8957A] to-[#9d7e62] hover:from-[#a3846b] hover:to-[#8c6d51] text-white text-[15px] font-medium rounded-xl transition-colors shadow-md cursor-pointer"
               >
                 Take Photo
               </button>
               <button
-                onClick={() => alert('Gallery upload coming soon!')}
+                onClick={handleUploadClick}
                 className="w-full px-6 py-4 bg-white dark:bg-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-700 text-[#2a2a2a] dark:text-white text-[15px] font-medium rounded-xl border border-gray-200 dark:border-neutral-700 transition-colors cursor-pointer"
               >
                 Upload from Gallery
@@ -736,6 +761,23 @@ export default function TryHairstyles() {
           </div>
         </div>
       </div>
+
+      {/* Hidden file inputs */}
+      <input
+        ref={fileInputRef}
+        type="file"
+        accept="image/*"
+        onChange={handleFileUpload}
+        className="hidden"
+      />
+      <input
+        ref={cameraInputRef}
+        type="file"
+        accept="image/*"
+        capture="environment"
+        onChange={handleFileUpload}
+        className="hidden"
+      />
 
       <Footer />
     </main>
