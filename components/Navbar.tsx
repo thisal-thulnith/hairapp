@@ -50,6 +50,7 @@ export default function Navbar() {
   };
 
   return (
+    <>
     <header className={`bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md fixed left-0 right-0 z-50 border-b border-neutral-200/50 dark:border-neutral-800/50 transition-all duration-300 ${
       isScrolled ? 'shadow-lg' : 'shadow-none'
     } ${
@@ -209,18 +210,20 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+      </div>
+    </header>
 
-        {/* Mobile Menu Drawer */}
-        {mobileMenuOpen && (
-          <>
-            {/* Backdrop */}
-            <div
-              className="fixed top-[56px] left-0 right-0 bottom-0 bg-black/50 z-[9998] backdrop-blur-sm"
-              onClick={() => setMobileMenuOpen(false)}
-            ></div>
+    {/* Mobile Menu Drawer - Outside header for proper z-index */}
+    {mobileMenuOpen && (
+      <>
+        {/* Backdrop */}
+        <div
+          className="fixed top-[56px] left-0 right-0 bottom-0 bg-black/50 z-[100] backdrop-blur-sm md:hidden"
+          onClick={() => setMobileMenuOpen(false)}
+        ></div>
 
-            {/* Menu Content - Below Navbar */}
-            <div className="fixed top-[56px] left-0 right-0 bottom-0 bg-white dark:bg-neutral-900 z-[9999] overflow-y-auto">
+        {/* Menu Content - Below Navbar */}
+        <div className="fixed top-[56px] left-0 right-0 bottom-0 bg-white dark:bg-neutral-900 z-[101] overflow-y-auto md:hidden">
               <div className="px-4 py-6">
                 {/* Navigation Links */}
                 <nav className="space-y-2 mb-6">
@@ -334,11 +337,10 @@ export default function Navbar() {
                     </Link>
                   </div>
                 )}
-              </div>
             </div>
-          </>
-        )}
-      </div>
-    </header>
+          </div>
+        </>
+      )}
+    </>
   );
 }
