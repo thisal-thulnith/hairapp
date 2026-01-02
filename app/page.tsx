@@ -30,7 +30,7 @@ export default function Page() {
             <div className="relative w-full h-full">
               <Image
                 src="/images/logo.png"
-                alt="Tressora Logo"
+                alt="LILY Logo"
                 fill
                 className="object-contain drop-shadow-lg"
                 priority
@@ -39,7 +39,7 @@ export default function Page() {
           </div>
           {/* Brand name */}
           <h2 className="text-[28px] font-playfair text-[#4a4a4a] dark:text-neutral-100 tracking-wide font-normal transition-colors" style={{ fontFamily: 'var(--font-playfair), Georgia, serif' }}>
-            Tressora
+            LILY
           </h2>
         </div>
       </div>
