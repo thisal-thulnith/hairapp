@@ -194,7 +194,7 @@ export default function Navbar() {
             {/* Hamburger Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="relative z-[102] w-10 h-10 flex items-center justify-center text-[#2a2a2a] hover:text-primary-500 dark:text-white dark:hover:text-primary-400 transition-colors rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 active:scale-95"
+              className="relative z-[10000] w-10 h-10 flex items-center justify-center text-[#2a2a2a] hover:text-primary-500 dark:text-white dark:hover:text-primary-400 transition-colors rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 active:scale-95"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
@@ -215,12 +215,12 @@ export default function Navbar() {
           <>
             {/* Backdrop */}
             <div
-              className="fixed top-[56px] left-0 right-0 bottom-0 bg-black/50 z-[100] backdrop-blur-sm"
+              className="fixed top-[56px] left-0 right-0 bottom-0 bg-black/50 z-[9998] backdrop-blur-sm"
               onClick={() => setMobileMenuOpen(false)}
             ></div>
 
             {/* Menu Content */}
-            <div className="fixed top-[56px] left-0 right-0 bottom-0 bg-white dark:bg-neutral-900 z-[101] overflow-y-auto shadow-2xl transition-colors">
+            <div className="fixed top-[56px] left-0 right-0 bottom-0 bg-white dark:bg-neutral-900 z-[9999] overflow-y-auto shadow-2xl border-t-2 border-neutral-200 dark:border-neutral-700">
               <div className="px-4 py-6">
                 {/* Navigation Links */}
                 <nav className="space-y-2 mb-6">
